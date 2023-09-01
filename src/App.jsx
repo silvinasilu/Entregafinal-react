@@ -5,14 +5,17 @@ import './App.css'
 import NavBar from './components/NavBar'
 import Sidebar from './components/Sidebar'
 import { useDisclosure } from '@chakra-ui/react';
+import ItemDetail from './components/ItemDetail'
+import Catalogo from './components/Catalogo'
 
 function App() {
-  const [estaAbierto, setEstaAbierto] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  
   return (
     <>
       <NavBar onOpen={onOpen}/>
       <Sidebar isOpen={isOpen} onClose={onClose} />
+      <Catalogo />
     </>
   )
 }

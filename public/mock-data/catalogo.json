@@ -1,0 +1,50 @@
+[
+    {
+        "precio": 25,
+        "stock": 100,
+        "foto": "",
+        "descripcion": "La mejor remera de tu vida!",
+        "nombre": "Remera musculosa",
+        "tipo": "REMERA"
+    },
+    {
+        "precio": 30,
+        "stock": 5,
+        "foto": "",
+        "nombre": "Pantalón cargo",
+        "descripcion": "El mejor pantalón de tu vida!",
+        "tipo": "PANTALÓN"
+    },
+    {
+        "precio": 75,
+        "stock": 0,
+        "foto": "",
+        "nombre": "Campera rompevientos",
+        "descripcion": "Algo que te va a encantar. Color ROSA.",
+        "tipo": "CAMPERA"
+    },
+    {
+        "precio": 400,
+        "stock": 0,
+        "foto": "",
+        "nombre": "Zapatillas Asesinas",
+        "descripcion": "Inolvidable",
+        "tipo": "CALZADO"
+    },
+    {
+        "precio": 88,
+        "stock": 6,
+        "foto": "",
+        "nombre": "Botas",
+        "descripcion": "Muy grande para corazones grandes XD",
+        "tipo": "CALZADO"
+    },
+    {
+        "precio": 44,
+        "stock": 0,
+        "foto": "",
+        "nombre": "Súpertanga",
+        "descripcion": "El hilo no solo lava dientes ;)",
+        "tipo": "INTERIOR"
+    }
+]

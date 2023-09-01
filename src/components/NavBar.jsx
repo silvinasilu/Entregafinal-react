@@ -91,8 +91,6 @@ export default function NavBar({ onOpen }) {
                     </Box>
                 ) : null} */}
             </Box>
-
-            <Box p={4}>Main Content Here</Box>
         </>
     )
 }
