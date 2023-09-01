@@ -28,7 +28,7 @@ export default function Sidebar() {
   }
 
   return (
-    <Drawer placement={placement} onClose={onClose} isOpen={true}>
+    <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
       <DrawerOverlay />
       <DrawerContent>
         <DrawerHeader borderBottomWidth='1px'>{'Productos'}</DrawerHeader>

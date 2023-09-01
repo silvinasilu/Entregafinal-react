@@ -46,23 +46,23 @@ export default function NavBar() {
 
     return (
         <>
-            <Box bg={useColorModeValue('pink.200', 'gray.900')} px={4}>
+            <Box bg={useColorModeValue('pink.200', 'pink.300')} px={4}>
                 <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
                     <IconButton
                         size={'md'}
                         icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
                         aria-label={'Open Menu'}
-                        display={{ md: 'none' }}
+                        /* display={{ md: 'none' }} */
                         onClick={isOpen ? onClose : onOpen}
                     />
-                    {/* <HStack spacing={8} alignItems={'center'}>
+                    <HStack spacing={8} alignItems={'center'}>
                         <Box>Logo</Box>
-                        <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
+                        {/* <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
                             {Links.map((link) => (
                                 <NavLink key={link}>{link}</NavLink>
                             ))}
-                        </HStack>
-                    </HStack> */}
+                        </HStack> */}
+                    </HStack>
                     <Flex alignItems={'center'}>
                         <Menu>
                             <MenuButton
