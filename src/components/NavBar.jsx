@@ -41,19 +41,17 @@ const NavLink = (props) => {
     )
 }
 
-export default function NavBar() {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-
+export default function NavBar({ onOpen }) {
+    
     return (
         <>
             <Box bg={useColorModeValue('pink.200', 'pink.300')} px={4}>
                 <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
                     <IconButton
                         size={'md'}
-                        icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+                        icon={<HamburgerIcon />}
                         aria-label={'Open Menu'}
-                        /* display={{ md: 'none' }} */
-                        onClick={isOpen ? onClose : onOpen}
+                        onClick={onOpen}
                     />
                     <HStack spacing={8} alignItems={'center'}>
                         <Box>Logo</Box>

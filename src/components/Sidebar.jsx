@@ -2,8 +2,8 @@ import { useState } from "react"
 import { useDisclosure, useColorModeValue } from "@chakra-ui/react"
 import { Box, Drawer, DrawerContent, DrawerOverlay, DrawerHeader, DrawerBody, Stack } from "@chakra-ui/react"
 
-export default function Sidebar() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+export default function Sidebar({ isOpen, onClose }) {
+  
   const [placement, setPlacement] = useState('left')
 
   const Links = ['Ropa-Calzado Hombres', 'Ropa-Calzado Mujeres', 'Ropa-Calzado Niños']

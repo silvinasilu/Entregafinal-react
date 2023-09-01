@@ -4,12 +4,15 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import NavBar from './components/NavBar'
 import Sidebar from './components/Sidebar'
+import { useDisclosure } from '@chakra-ui/react';
 
 function App() {
+  const [estaAbierto, setEstaAbierto] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <NavBar />
-      <Sidebar />
+      <NavBar onOpen={onOpen}/>
+      <Sidebar isOpen={isOpen} onClose={onClose} />
     </>
   )
 }
