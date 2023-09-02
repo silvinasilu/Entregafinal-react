@@ -1,34 +1,20 @@
 import { IconButton, Divider, VStack, Image, Center, Drawer, Flex, Text, DrawerBody, DrawerHeader, DrawerFooter, Stack, DrawerOverlay, DrawerContent, Button } from "@chakra-ui/react"
 import { Delete } from "@mui/icons-material";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "./CartContext";
 
 export default function CartWidget({ isOpen, onOpen, onClose }) {
-    const [productosCargados, setProductosCargados] = useState([{
-        "precio": 25,
-        "stock": 100,
-        "foto": "",
-        "descripcion": "La mejor remera de tu vida!",
-        "nombre": "Remera musculosa",
-        "tipo": "REMERA"
-    },
-    {
-        "precio": 30,
-        "stock": 5,
-        "foto": "",
-        "nombre": "Pantalón cargo",
-        "descripcion": "El mejor pantalón de tu vida!",
-        "tipo": "PANTALÓN"
-    }]);
+    const { carrito, sacarDelCarrito } = useContext(CartContext);
 
     return <Drawer placement={"right"} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>
             <DrawerHeader borderBottomWidth='1px'>{'Carrito de Compras'}</DrawerHeader>
             <DrawerBody>
-                <Stack as={'nav'} spacing={4}>
+                {/* <Stack as={'nav'} spacing={4}> */}
                     {
-                        productosCargados ?
-                            productosCargados.map(producto =>
+                        carrito ?
+                            carrito.map(producto =>
                                 <Flex
                                     borderBottomWidth={"2px"}
                                     borderBottomColor={"pink.700"}
@@ -36,6 +22,7 @@ export default function CartWidget({ isOpen, onOpen, onClose }) {
                                     justifyContent="space-between"
                                     rounded bg="pink.200"
                                     color="pink.900"
+                                    key={producto.id}
                                 >
                                     <Center p="2">
                                         <Image
@@ -50,17 +37,24 @@ export default function CartWidget({ isOpen, onOpen, onClose }) {
                                         <Text>${producto.precio}</Text>
                                     </VStack>
                                     <Center>
-                                        <IconButton border="none" _hover={{ border: "none", bg: "pink.200" }} bg="pink.200" color="red.500" icon={<Delete size="xl" />} />
+                                        <IconButton
+                                            border="none"
+                                            _hover={{ border: "none", bg: "pink.200" }}
+                                            bg="pink.200"
+                                            color="red.500"
+                                            icon={<Delete size="xl" />}
+                                            onClick={() => sacarDelCarrito(producto.id)}
+                                        />
                                     </Center>
                                 </Flex>) :
                             <Center p="5%">
                                 <Text>No tenés productos cargados...</Text>
                             </Center>
                     }
-                </Stack>
+                {/* </Stack> */}
             </DrawerBody>
-            <DrawerFooter bg="pink.500" justifyContent={"center"}>
-                <Button bg="pink.100"><Text color="pink.500">Comprar</Text></Button>
+            <DrawerFooter bg="pink.500" justifyContent={"center"} alignItems={"center"}>
+                <Button bg="pink.100" color="pink.500">Comprar</Button>
             </DrawerFooter>
         </DrawerContent>
     </Drawer>

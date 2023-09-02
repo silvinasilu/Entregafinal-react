@@ -16,6 +16,7 @@ export default function Catalogo() {
     useEffect(() => {
         buscarProductos();
     }, [])
+    
     return <Container
         display={"flex"}
         justifyContent={"center"}

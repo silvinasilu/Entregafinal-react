@@ -8,6 +8,7 @@ import { useDisclosure } from '@chakra-ui/react';
 import ItemDetail from './components/ItemDetail'
 import Catalogo from './components/Catalogo'
 import CartWidget from './components/CartWidget'
+import CartProvider from './components/CartContext'
 
 function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -25,12 +26,14 @@ function App() {
     <>
       <NavBar onOpen={onOpen} abrirCarrito={abrirCarrito} />
       <Sidebar isOpen={isOpen} onClose={onClose} />
-      <Catalogo />
-      <CartWidget
-        isOpen={estaAbierto}
-        onClose={() => cerrarCarrito()}
-        onOpen={() => abrirCarrito()}
-      />
+      <CartProvider >
+        <Catalogo />
+        <CartWidget
+          isOpen={estaAbierto}
+          onClose={() => cerrarCarrito()}
+          onOpen={() => abrirCarrito()}
+        />
+      </CartProvider>
     </>
   )
 }

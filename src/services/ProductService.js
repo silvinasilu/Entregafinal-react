@@ -7,7 +7,7 @@ class ProductoService {
         return getDocs(collection(dataBase, "productos"))
             .then(querySnapshot => querySnapshot
                 .docs
-                .map(doc => doc.data())
+                .map((doc, index) => ({...doc.data(), id: ++index}))
             );
     }
 }
