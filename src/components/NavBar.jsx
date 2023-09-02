@@ -13,27 +13,6 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import { ShoppingCart } from '@mui/icons-material'
 
-const Links = []
-
-const NavLink = (props) => {
-    const { children } = props
-
-    return (
-        <Box
-            as="a"
-            px={2}
-            py={1}
-            rounded={'md'}
-            _hover={{
-                textDecoration: 'none',
-                bg: useColorModeValue('pink.200', 'gray.700'),
-            }}
-            href={'#'}>
-            {children}
-        </Box>
-    )
-}
-
 export default function NavBar({ onOpen, abrirCarrito }) {
     
     return (
