@@ -8,13 +8,14 @@ import {
     MenuButton,
     useColorModeValue,
     Icon,
+    Image
 } from '@chakra-ui/react'
 
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import { ShoppingCart } from '@mui/icons-material'
-
+import logo from '../assets/logo.png';
 export default function NavBar({ onOpen, abrirCarrito }) {
-    
+
     return (
         <>
             <Box bg={useColorModeValue('pink.200', 'pink.300')} px={4}>
@@ -26,7 +27,13 @@ export default function NavBar({ onOpen, abrirCarrito }) {
                         onClick={onOpen}
                     />
                     <HStack spacing={8} alignItems={'center'}>
-                        <Box>Logo</Box>
+                        <Box>
+                            <Image
+                                size="xs"
+                                src={logo}
+                                alt='logo-victoria-store'
+                            />
+                        </Box>
                         {/* <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
                             {Links.map((link) => (
                                 <NavLink key={link}>{link}</NavLink>

@@ -16,11 +16,16 @@ const CartProvider = (props) => {
         setCarrito(carritoActualizado);
     }
 
+    function vaciarCarrito() {
+        setCarrito([]);
+    }
+
     return <CartContext.Provider
         value={{
             carrito: carrito,
             sacarDelCarrito: sacarDelCarrito,
-            agregarAlCarrito: agregarAlCarrito
+            agregarAlCarrito: agregarAlCarrito,
+            vaciarCarrito: vaciarCarrito
         }}
     >
         {props.children}

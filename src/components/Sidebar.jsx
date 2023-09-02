@@ -6,7 +6,7 @@ export default function Sidebar({ isOpen, onClose }) {
   
   const [placement, setPlacement] = useState('left')
 
-  const Links = ['Ropa-Calzado Hombres', 'Ropa-Calzado Mujeres', 'Ropa-Calzado Niños']
+  const Links = ['PANTALONES', 'REMERAS', 'NIÑOS', 'ROPA INTERIOR']
 
   const NavLink = (props) => {
     const { children } = props

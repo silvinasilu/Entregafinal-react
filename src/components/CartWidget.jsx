@@ -2,9 +2,13 @@ import { IconButton, Divider, VStack, Image, Center, Drawer, Flex, Text, DrawerB
 import { Delete } from "@mui/icons-material";
 import { useContext, useState } from "react";
 import { CartContext } from "./CartContext";
+import Modal from "./Modal";
+
 
 export default function CartWidget({ isOpen, onOpen, onClose }) {
-    const { carrito, sacarDelCarrito } = useContext(CartContext);
+    const { carrito, sacarDelCarrito, vaciarCarrito } = useContext(CartContext);
+    const [modalAbierto, setModalAbierto] = useState(true);
+
 
     return <Drawer placement={"right"} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
@@ -54,8 +58,16 @@ export default function CartWidget({ isOpen, onOpen, onClose }) {
                 </Stack>
             </DrawerBody>
             <DrawerFooter bg="pink.500" justifyContent={"center"} alignItems={"center"}>
-                <Button bg="pink.100" color="pink.500">Comprar</Button>
+                <Button
+                    bg="pink.100"
+                    color="pink.500"
+                    onClick={() => { 
+                        vaciarCarrito(); 
+                        setModalAbierto(true) 
+                    }}
+                >Comprar</Button>
             </DrawerFooter>
         </DrawerContent>
+        <Modal texto="Compra realizada con éxito ;)" modalAbierto={modalAbierto} setModalAbierto={setModalAbierto}></Modal>
     </Drawer>
 }
