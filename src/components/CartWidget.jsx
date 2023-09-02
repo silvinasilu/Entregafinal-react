@@ -11,7 +11,7 @@ export default function CartWidget({ isOpen, onOpen, onClose }) {
         <DrawerContent>
             <DrawerHeader borderBottomWidth='1px'>{'Carrito de Compras'}</DrawerHeader>
             <DrawerBody>
-                {/* <Stack as={'nav'} spacing={4}> */}
+                <Stack as={'nav'} spacing={4}>
                     {
                         carrito ?
                             carrito.map(producto =>
@@ -48,10 +48,10 @@ export default function CartWidget({ isOpen, onOpen, onClose }) {
                                     </Center>
                                 </Flex>) :
                             <Center p="5%">
-                                <Text>No tenés productos cargados...</Text>
+                                <Text color="black">No tenés productos cargados...</Text>
                             </Center>
                     }
-                {/* </Stack> */}
+                </Stack>
             </DrawerBody>
             <DrawerFooter bg="pink.500" justifyContent={"center"} alignItems={"center"}>
                 <Button bg="pink.100" color="pink.500">Comprar</Button>

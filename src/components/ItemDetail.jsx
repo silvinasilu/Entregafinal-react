@@ -1,6 +1,10 @@
 import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button } from "@chakra-ui/react"
+import { CartContext } from "./CartContext";
+import { useContext } from "react";
 
 export default function ItemDetail({ producto }) {
+    const { agregarAlCarrito } = useContext(CartContext);
+
     return <Card maxW='sm' textAlign={"center"}>
         <CardBody>
             <Image
@@ -16,20 +20,24 @@ export default function ItemDetail({ producto }) {
                 <Text color='blue.600' fontSize='2xl'>
                     ${producto.precio}
                 </Text>
-                <Text color='blue.600' fontSize='2xl'>
+                {/* <Text color='blue.600' fontSize='2xl'>
                     {producto.stock}
-                </Text>
+                </Text> */}
             </Stack>
         </CardBody>
-        <Divider color="pink.800"/>
+        <Divider color="pink.800" />
         <CardFooter display="flex" justifyContent={"end"}>
             {/* <ButtonGroup spacing='2'> */}
-                {/* <Button variant='solid' colorScheme='blue'>
+            {/* <Button variant='solid' colorScheme='blue'>
                     Buy now
                 </Button> */}
-                <Button color="pink.50" bg="pink.400" variant='ghost'>
-                    Agregar al carrito
-                </Button>
+            <Button
+                color="pink.50"
+                bg="pink.400"
+                onClick={() => agregarAlCarrito(producto)}
+            >
+                Agregar al carrito
+            </Button>
             {/* </ButtonGroup> */}
         </CardFooter>
     </Card>

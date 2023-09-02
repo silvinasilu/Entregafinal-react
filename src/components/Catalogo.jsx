@@ -5,6 +5,7 @@ import productoService from "../services/ProductService";
 
 export default function Catalogo() {
     const [productos, setProductos] = useState([]);
+    
     const buscarProductos = async () => {
         await productoService.buscarProductos()
         .then((productsSaved) => {
