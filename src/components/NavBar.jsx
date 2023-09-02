@@ -1,19 +1,12 @@
 import {
     Box,
     Flex,
-    Avatar,
     HStack,
-    Text,
     IconButton,
     Button,
     Menu,
     MenuButton,
-    MenuList,
-    MenuItem,
-    MenuDivider,
-    useDisclosure,
     useColorModeValue,
-    Stack,
     Icon,
 } from '@chakra-ui/react'
 
@@ -41,7 +34,7 @@ const NavLink = (props) => {
     )
 }
 
-export default function NavBar({ onOpen }) {
+export default function NavBar({ onOpen, abrirCarrito }) {
     
     return (
         <>
@@ -65,18 +58,17 @@ export default function NavBar({ onOpen }) {
                         <Menu>
                             <MenuButton
                                 as={Button}
-                                rounded={'full'}
-                                variant={'link'}
                                 cursor={'pointer'}
-                                minW={0}>
+                                minW={0}
+                                onClick={abrirCarrito}>
                                 <Icon color="gray.500" as={ShoppingCart} />
                             </MenuButton>
-                            <MenuList>
+                            {/* <MenuList>
                                 <MenuItem>Link 1</MenuItem>
                                 <MenuItem>Link 2</MenuItem>
                                 <MenuDivider />
                                 <MenuItem>Link 3</MenuItem>
-                            </MenuList>
+                            </MenuList> */}
                         </Menu>
                     </Flex>
                 </Flex>
