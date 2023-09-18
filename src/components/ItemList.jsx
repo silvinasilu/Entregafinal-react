@@ -3,21 +3,7 @@ import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import productoService from "../services/ProductService";
 
-export default function Catalogo() {
-    const [productos, setProductos] = useState([]);
-    
-    const buscarProductos = async () => {
-        await productoService.buscarProductos()
-        .then((productsSaved) => {
-            console.log(productsSaved);
-            setProductos(productsSaved);
-        })
-    }
-
-    useEffect(() => {
-        buscarProductos();
-    }, [])
-    
+export default function ItemList({productos}) {
     return <Container
         display={"flex"}
         justifyContent={"center"}
