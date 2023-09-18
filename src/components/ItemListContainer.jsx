@@ -1,5 +1,7 @@
 import React from 'react'
 import ItemList from './ItemList';
+import { useEffect, useState } from 'react';
+import productoService from "../services/ProductService"
 
 function ItemListContainer() {
     const [productos, setProductos] = useState([]);

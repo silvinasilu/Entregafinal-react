@@ -1,9 +1,7 @@
 import { Container } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import ItemDetail from "./ItemDetail";
-import productoService from "../services/ProductService";
+import ItemDetailContainer from "./ItemDetailContainer";
 
-export default function ItemList({productos}) {
+export default function ItemList({ productos }) {
     return <Container
         display={"flex"}
         justifyContent={"center"}
@@ -11,15 +9,7 @@ export default function ItemList({productos}) {
         maxW={"full"}
     >
         {productos.map((producto, index) =>
-            <Container
-                key={index}
-                w="auto"
-                display="flex"
-                justifyContent="center"
-                p="4"
-            >
-                <ItemDetail producto={producto} />
-            </Container>)
-        }
+            <ItemDetailContainer producto={producto} />
+        )}
     </Container>
 }

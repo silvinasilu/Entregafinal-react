@@ -1,14 +1,11 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import NavBar from './components/NavBar'
 import Sidebar from './components/Sidebar'
 import { useDisclosure } from '@chakra-ui/react';
-import ItemDetail from './components/ItemDetail'
-import Catalogo from './components/Catalogo'
 import CartWidget from './components/CartWidget'
 import CartProvider from './components/CartContext'
+import ItemListContainer from './components/ItemListContainer'
 
 function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -27,7 +24,7 @@ function App() {
       <NavBar onOpen={onOpen} abrirCarrito={abrirCarrito} />
       <Sidebar isOpen={isOpen} onClose={onClose} />
       <CartProvider >
-        <Catalogo />
+        <ItemListContainer />
         <CartWidget
           isOpen={estaAbierto}
           onClose={() => cerrarCarrito()}
