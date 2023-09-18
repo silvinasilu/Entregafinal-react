@@ -32,7 +32,7 @@ export default function CartWidget({ isOpen, onOpen, onClose }) {
                                         <Image
                                             boxSize='100px'
                                             objectFit='cover'
-                                            src='https://bit.ly/dan-abramov'
+                                            src={producto.foto}
                                             alt='Dan Abramov'
                                         ></Image>
                                     </Center>
