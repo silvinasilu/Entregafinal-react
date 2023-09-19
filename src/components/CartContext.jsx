@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Producto from "../domain/Producto";
 
 export const CartContext = createContext(null);
 
@@ -12,8 +13,10 @@ const CartProvider = (props) => {
     }
 
     function agregarAlCarrito(producto) {
-        let carritoActualizado = [...carrito, producto];
-        setCarrito(carritoActualizado);
+        if (!carrito.map(producto => producto.id).includes(producto.id)) {
+            let carritoActualizado = [...carrito, producto];
+            setCarrito(carritoActualizado);
+        }
     }
 
     function vaciarCarrito() {
